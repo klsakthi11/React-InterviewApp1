@@ -73,21 +73,21 @@ const useWindowSize = () => {
 };
 
 // Component for useImperativeHandle demo
-// Removed unused FancyInput component
-  const inputRef = useRef<HTMLInputElement>(null);
+// const FancyInput = forwardRef((props: any, ref: any) => {
+//   const inputRef = useRef<HTMLInputElement>(null);
 
-  useImperativeHandle(ref, () => ({
-    focus: () => inputRef.current?.focus(),
-    blur: () => inputRef.current?.blur(),
-    select: () => inputRef.current?.select(),
-    getValue: () => inputRef.current?.value || '',
-    setValue: (value: string) => {
-      if (inputRef.current) inputRef.current.value = value;
-    },
-  }));
+//   useImperativeHandle(ref, () => ({
+//     focus: () => inputRef.current?.focus(),
+//     blur: () => inputRef.current?.blur(),
+//     select: () => inputRef.current?.select(),
+//     getValue: () => inputRef.current?.value || '',
+//     setValue: (value: string) => {
+//       if (inputRef.current) inputRef.current.value = value;
+//     },
+//   }));
 
-  return <input ref={inputRef} {...props} />;
-});
+//   return <input ref={inputRef} {...props} />;
+// });
 
 const Hooks = () => {
   // All hooks must be called at the top level
@@ -146,38 +146,38 @@ const Hooks = () => {
   }, []); // Empty dependency array - runs only once
 
   // useCallback - Memoized function
-  // Removed unused handleReset
+  const handleReset = useCallback(() => {
     setCount(0);
     setText('');
   }, []);
 
   // useMemo - Memoized value
-  // Removed unused expensiveCalculation
+  const expensiveCalculation = useMemo(() => {
     console.log('Performing expensive calculation...');
     return count * 2;
   }, [count]);
 
   // Custom hook simulation - moved outside component
-  // Removed unused windowSizeCustom
+  const windowSizeCustom = useWindowSize();
 
   // Handler functions
-  // Removed unused handleFancyInputFocus
+  const handleFancyInputFocus = () => {
     fancyInputRef.current?.focus();
   };
 
-  // Removed unused handleFancyInputBlur
+  const handleFancyInputBlur = () => {
     fancyInputRef.current?.blur();
   };
 
-  // Removed unused handleFancyInputSelect
+  const handleFancyInputSelect = () => {
     fancyInputRef.current?.select();
   };
 
-  // Removed unused handleFancyInputSetValue
+  const handleFancyInputSetValue = () => {
     fancyInputRef.current?.setValue('Hello from imperative handle!');
   };
 
-  // Removed unused handleTransitionUpdate
+  const handleTransitionUpdate = () => {
     startTransition(() => {
       setDeferredCount(prev => prev + 1000);
     });
