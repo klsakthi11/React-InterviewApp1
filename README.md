@@ -2,6 +2,8 @@
 
 A comprehensive, interactive learning platform designed to help developers master React concepts through hands-on examples, detailed explanations, and progress tracking.
 
+[🌐 Live Demo](https://react-interview-app1-5qkve4tro-klsakthi11s-projects.vercel.app)
+
 ## 🚀 Features
 
 ### Core Learning Features
@@ -96,6 +98,21 @@ A comprehensive, interactive learning platform designed to help developers maste
 
 4. **Open your browser**
    Navigate to `http://localhost:3000`
+
+## 🌐 Live Demo
+
+**Try the app online without installation:**
+
+**[🚀 Launch React Interview Prep App](https://react-interview-app1-5qkve4tro-klsakthi11s-projects.vercel.app)**
+
+The live demo includes all features:
+
+- ✅ Interactive code examples
+- ✅ Progress tracking
+- ✅ Search functionality
+- ✅ Theme switching
+- ✅ Mobile responsive design
+- ✅ All React concepts from Beginner to Expert level
 
 ### Available Scripts
 
