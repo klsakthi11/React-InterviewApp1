@@ -353,7 +353,7 @@ const RenderProps = () => {
                   </div>
                 )}
 
-                {data && (
+                {(data as any) && (
                   <div
                     style={{
                       padding: '1rem',
