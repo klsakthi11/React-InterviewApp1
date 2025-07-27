@@ -403,7 +403,7 @@ export const Heatmap = ({
     const startY = 30;
 
     // Draw heatmap cells
-    Object.entries(weeks).forEach(([week, values], weekIndex) => {
+    Object.entries(weeks).forEach(([, values], weekIndex) => {
       const avgValue =
         values.reduce((sum, val) => sum + val, 0) / values.length;
       const intensity = avgValue / maxValue;

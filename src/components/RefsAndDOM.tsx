@@ -14,7 +14,7 @@ interface VideoPlayerRef {
   reset: () => void;
 }
 
-const VideoPlayer = forwardRef<VideoPlayerRef>((props, ref) => {
+const VideoPlayer = forwardRef<VideoPlayerRef>((_props, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -516,28 +516,39 @@ const RefsAndDOM = () => {
               >
                 <ul style={{ paddingLeft: '1.5rem' }}>
                   <li>
-                    <strong>What is a ref in React?</strong> - A way to access DOM nodes or React elements directly
+                    <strong>What is a ref in React?</strong> - A way to access
+                    DOM nodes or React elements directly
                   </li>
                   <li>
-                    <strong>When should you use refs?</strong> - For imperative actions: focus, selection, media playback, measuring, integrating with non-React libraries
+                    <strong>When should you use refs?</strong> - For imperative
+                    actions: focus, selection, media playback, measuring,
+                    integrating with non-React libraries
                   </li>
                   <li>
-                    <strong>What is useRef?</strong> - A React hook to create a mutable ref object
+                    <strong>What is useRef?</strong> - A React hook to create a
+                    mutable ref object
                   </li>
                   <li>
-                    <strong>How do you forward refs to child components?</strong> - Use React.forwardRef
+                    <strong>
+                      How do you forward refs to child components?
+                    </strong>{' '}
+                    - Use React.forwardRef
                   </li>
                   <li>
-                    <strong>What is useImperativeHandle?</strong> - Customizes the instance value exposed to parent refs
+                    <strong>What is useImperativeHandle?</strong> - Customizes
+                    the instance value exposed to parent refs
                   </li>
                   <li>
-                    <strong>How do you auto-focus an input?</strong> - Use ref and call .focus() in useEffect
+                    <strong>How do you auto-focus an input?</strong> - Use ref
+                    and call .focus() in useEffect
                   </li>
                   <li>
-                    <strong>How do you measure a DOM element?</strong> - Use ref and read properties like getBoundingClientRect
+                    <strong>How do you measure a DOM element?</strong> - Use ref
+                    and read properties like getBoundingClientRect
                   </li>
                   <li>
-                    <strong>What are the risks of using refs?</strong> - Can break React's declarative model, lead to bugs
+                    <strong>What are the risks of using refs?</strong> - Can
+                    break React's declarative model, lead to bugs
                   </li>
                 </ul>
               </div>
@@ -569,28 +580,35 @@ const RefsAndDOM = () => {
               >
                 <ul style={{ paddingLeft: '1.5rem' }}>
                   <li>
-                    <strong>Refs are for imperative code</strong> - Use for direct DOM access
+                    <strong>Refs are for imperative code</strong> - Use for
+                    direct DOM access
                   </li>
                   <li>
-                    <strong>Don't overuse refs</strong> - Prefer declarative code when possible
+                    <strong>Don't overuse refs</strong> - Prefer declarative
+                    code when possible
                   </li>
                   <li>
                     <strong>Always check ref.current</strong> - It may be null
                   </li>
                   <li>
-                    <strong>Use forwardRef for custom components</strong> - To pass refs down
+                    <strong>Use forwardRef for custom components</strong> - To
+                    pass refs down
                   </li>
                   <li>
-                    <strong>useImperativeHandle for custom APIs</strong> - Expose imperative methods
+                    <strong>useImperativeHandle for custom APIs</strong> -
+                    Expose imperative methods
                   </li>
                   <li>
-                    <strong>Refs don't trigger re-renders</strong> - Mutating ref.current doesn't cause updates
+                    <strong>Refs don't trigger re-renders</strong> - Mutating
+                    ref.current doesn't cause updates
                   </li>
                   <li>
-                    <strong>Can be used for animations</strong> - Triggering transitions, measuring
+                    <strong>Can be used for animations</strong> - Triggering
+                    transitions, measuring
                   </li>
                   <li>
-                    <strong>Type refs in TypeScript</strong> - Use correct types for DOM elements
+                    <strong>Type refs in TypeScript</strong> - Use correct types
+                    for DOM elements
                   </li>
                 </ul>
               </div>
@@ -622,25 +640,32 @@ const RefsAndDOM = () => {
               >
                 <ul style={{ paddingLeft: '1.5rem' }}>
                   <li>
-                    <strong>Custom imperative handles</strong> - Expose custom methods to parent
+                    <strong>Custom imperative handles</strong> - Expose custom
+                    methods to parent
                   </li>
                   <li>
-                    <strong>Integrating with third-party libraries</strong> - Use refs to access DOM for plugins
+                    <strong>Integrating with third-party libraries</strong> -
+                    Use refs to access DOM for plugins
                   </li>
                   <li>
-                    <strong>Measuring and animations</strong> - Use refs for layout, transitions
+                    <strong>Measuring and animations</strong> - Use refs for
+                    layout, transitions
                   </li>
                   <li>
-                    <strong>Refs with portals</strong> - Accessing DOM outside the root
+                    <strong>Refs with portals</strong> - Accessing DOM outside
+                    the root
                   </li>
                   <li>
-                    <strong>Refs in class components</strong> - Use React.createRef
+                    <strong>Refs in class components</strong> - Use
+                    React.createRef
                   </li>
                   <li>
-                    <strong>Refs and context</strong> - Combine for advanced patterns
+                    <strong>Refs and context</strong> - Combine for advanced
+                    patterns
                   </li>
                   <li>
-                    <strong>Refs and accessibility</strong> - Manage focus for a11y
+                    <strong>Refs and accessibility</strong> - Manage focus for
+                    a11y
                   </li>
                   <li>
                     <strong>Testing refs</strong> - Simulate DOM access in tests
@@ -675,28 +700,35 @@ const RefsAndDOM = () => {
               >
                 <ul style={{ paddingLeft: '1.5rem' }}>
                   <li>
-                    <strong>Overusing refs</strong> - Makes code less declarative
+                    <strong>Overusing refs</strong> - Makes code less
+                    declarative
                   </li>
                   <li>
-                    <strong>Not checking ref.current</strong> - Can cause runtime errors
+                    <strong>Not checking ref.current</strong> - Can cause
+                    runtime errors
                   </li>
                   <li>
-                    <strong>Mutating DOM directly</strong> - Can break React's rendering
+                    <strong>Mutating DOM directly</strong> - Can break React's
+                    rendering
                   </li>
                   <li>
-                    <strong>Memory leaks</strong> - Not cleaning up event listeners
+                    <strong>Memory leaks</strong> - Not cleaning up event
+                    listeners
                   </li>
                   <li>
-                    <strong>Forgetting to use forwardRef</strong> - Custom components can't receive refs
+                    <strong>Forgetting to use forwardRef</strong> - Custom
+                    components can't receive refs
                   </li>
                   <li>
-                    <strong>Not using useImperativeHandle</strong> - Can't expose custom methods
+                    <strong>Not using useImperativeHandle</strong> - Can't
+                    expose custom methods
                   </li>
                   <li>
                     <strong>Refs in SSR</strong> - Not available on the server
                   </li>
                   <li>
-                    <strong>Accessibility issues</strong> - Not managing focus properly
+                    <strong>Accessibility issues</strong> - Not managing focus
+                    properly
                   </li>
                 </ul>
               </div>
@@ -731,13 +763,15 @@ const RefsAndDOM = () => {
                     <strong>React Spring</strong> - Animation library using refs
                   </li>
                   <li>
-                    <strong>React Transition Group</strong> - Animation and transitions
+                    <strong>React Transition Group</strong> - Animation and
+                    transitions
                   </li>
                   <li>
                     <strong>React Portal</strong> - Render outside the root DOM
                   </li>
                   <li>
-                    <strong>React Testing Library</strong> - Testing refs and DOM
+                    <strong>React Testing Library</strong> - Testing refs and
+                    DOM
                   </li>
                   <li>
                     <strong>React DnD</strong> - Drag and drop with refs
@@ -781,28 +815,36 @@ const RefsAndDOM = () => {
               >
                 <ul style={{ paddingLeft: '1.5rem' }}>
                   <li>
-                    <strong>Use refs for imperative actions only</strong> - Prefer declarative code
+                    <strong>Use refs for imperative actions only</strong> -
+                    Prefer declarative code
                   </li>
                   <li>
-                    <strong>Encapsulate ref logic in hooks</strong> - Custom hooks for reuse
+                    <strong>Encapsulate ref logic in hooks</strong> - Custom
+                    hooks for reuse
                   </li>
                   <li>
-                    <strong>Combine refs with context</strong> - Share refs across components
+                    <strong>Combine refs with context</strong> - Share refs
+                    across components
                   </li>
                   <li>
-                    <strong>Use forwardRef for custom components</strong> - Pass refs down the tree
+                    <strong>Use forwardRef for custom components</strong> - Pass
+                    refs down the tree
                   </li>
                   <li>
-                    <strong>Clean up event listeners</strong> - Prevent memory leaks
+                    <strong>Clean up event listeners</strong> - Prevent memory
+                    leaks
                   </li>
                   <li>
-                    <strong>Type refs properly</strong> - Use TypeScript for type safety
+                    <strong>Type refs properly</strong> - Use TypeScript for
+                    type safety
                   </li>
                   <li>
-                    <strong>Test imperative logic</strong> - Simulate DOM access in tests
+                    <strong>Test imperative logic</strong> - Simulate DOM access
+                    in tests
                   </li>
                   <li>
-                    <strong>Document custom imperative handles</strong> - Make API clear for consumers
+                    <strong>Document custom imperative handles</strong> - Make
+                    API clear for consumers
                   </li>
                 </ul>
               </div>

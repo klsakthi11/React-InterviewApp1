@@ -25,7 +25,7 @@ const CodeEditor = ({
 }: CodeEditorProps) => {
   const [internalCode, setInternalCode] = useState(code);
   const [copied, setCopied] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ line: 1, column: 1 });
+  const [cursorPosition] = useState({ line: 1, column: 1 });
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumbersRef = useRef<HTMLDivElement>(null);
 

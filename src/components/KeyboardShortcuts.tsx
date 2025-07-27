@@ -15,7 +15,7 @@ interface KeyboardShortcutsProps {
 
 const KeyboardShortcuts = ({ children }: KeyboardShortcutsProps) => {
   const navigate = useNavigate();
-  const location = useLocation();
+  // Removed unused location
 
   // Define navigation shortcuts
   const navigationShortcuts: Shortcut[] = [
@@ -188,7 +188,7 @@ const KeyboardShortcuts = ({ children }: KeyboardShortcutsProps) => {
 
       // Check for multi-key shortcuts
       const pressedKeysArray = Array.from(pressedKeys).sort();
-      const pressedKeysString = pressedKeysArray.join(' ');
+      // Removed unused pressedKeysString
 
       // Find matching shortcut
       const shortcut = allShortcuts.find(s => {

@@ -43,7 +43,7 @@ const ExpensiveComponent = memo(
 
 // Virtual scrolling simulation
 const VirtualList = ({ items }: { items: string[] }) => {
-  const [visibleRange, setVisibleRange] = useState({ start: 0, end: 10 });
+  const [visibleRange] = useState({ start: 0, end: 10 });
   const itemHeight = 50;
   const containerHeight = 400;
 

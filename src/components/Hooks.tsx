@@ -12,7 +12,7 @@ import {
   useDeferredValue,
   useTransition,
   useId,
-  useSyncExternalStore,
+  // Removed unused useSyncExternalStore import
   useInsertionEffect,
 } from 'react';
 import ResizableCodePanel from './ResizableCodePanel';
@@ -73,7 +73,7 @@ const useWindowSize = () => {
 };
 
 // Component for useImperativeHandle demo
-const FancyInput = forwardRef((props: any, ref: any) => {
+// Removed unused FancyInput component
   const inputRef = useRef<HTMLInputElement>(null);
 
   useImperativeHandle(ref, () => ({
@@ -93,27 +93,27 @@ const Hooks = () => {
   // All hooks must be called at the top level
   const [count, setCount] = useState(0);
   const [text, setText] = useState('');
-  const [theme, setTheme] = useState('light');
-  const [isPending, startTransition] = useTransition();
-  const [deferredCount, setDeferredCount] = useState(0);
+  const [theme] = useState('light');
+  const [, startTransition] = useTransition();
+  const [, setDeferredCount] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const fancyInputRef = useRef<any>(null);
-  const uniqueId = useId();
+  // Removed unused uniqueId
 
   // useReducer state
-  const [reducerState, dispatch] = useReducer(counterReducer, {
+  const [, dispatch] = useReducer(counterReducer, {
     count: 0,
     history: [],
   });
 
   // useDebugValue hook
-  const [debugCount, setDebugCount] = useCounterWithDebug(0);
+  const [, setDebugCount] = useCounterWithDebug(0);
 
   // useSyncExternalStore hook
-  const windowSize = useWindowSizeStore();
+  // Removed unused windowSize
 
   // useDeferredValue hook
-  const deferredText = useDeferredValue(text);
+  // Removed unused deferredText
 
   // useEffect - Side effects
   useEffect(() => {
@@ -146,38 +146,38 @@ const Hooks = () => {
   }, []); // Empty dependency array - runs only once
 
   // useCallback - Memoized function
-  const handleReset = useCallback(() => {
+  // Removed unused handleReset
     setCount(0);
     setText('');
   }, []);
 
   // useMemo - Memoized value
-  const expensiveCalculation = useMemo(() => {
+  // Removed unused expensiveCalculation
     console.log('Performing expensive calculation...');
     return count * 2;
   }, [count]);
 
   // Custom hook simulation - moved outside component
-  const windowSizeCustom = useWindowSize();
+  // Removed unused windowSizeCustom
 
   // Handler functions
-  const handleFancyInputFocus = () => {
+  // Removed unused handleFancyInputFocus
     fancyInputRef.current?.focus();
   };
 
-  const handleFancyInputBlur = () => {
+  // Removed unused handleFancyInputBlur
     fancyInputRef.current?.blur();
   };
 
-  const handleFancyInputSelect = () => {
+  // Removed unused handleFancyInputSelect
     fancyInputRef.current?.select();
   };
 
-  const handleFancyInputSetValue = () => {
+  // Removed unused handleFancyInputSetValue
     fancyInputRef.current?.setValue('Hello from imperative handle!');
   };
 
-  const handleTransitionUpdate = () => {
+  // Removed unused handleTransitionUpdate
     startTransition(() => {
       setDeferredCount(prev => prev + 1000);
     });

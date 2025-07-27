@@ -99,7 +99,7 @@ const EventHandling = () => {
   }, []);
 
   // Additional event handlers for comprehensive demo
-  const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
+  // Removed unused dragPosition state
   const [isDragging, setIsDragging] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [touchPosition, setTouchPosition] = useState({ x: 0, y: 0 });
